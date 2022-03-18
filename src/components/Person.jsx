@@ -7,6 +7,9 @@ class Person extends React.Component {
       name: 'Stian',
       age: 27,
     };
+
+    this.handleDecrease = this.handleDecrease.bind(this);
+    this.handleIncrease = this.handleIncrease.bind(this);
   }
 
   handleIncrease() {
@@ -21,6 +24,10 @@ class Person extends React.Component {
       ...this.state,
       age: this.state.age - 1,
     });
+  }
+
+  componentDidUpdate() {
+    console.log('You changed the age');
   }
 
   render() {
